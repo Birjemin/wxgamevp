@@ -1,4 +1,4 @@
-## wxgamevp
+## wxgamevp-微信小游戏虚拟支付
 
 [![Build Status](https://travis-ci.com/Birjemin/wxgamevp.svg?branch=master)](https://travis-ci.com/Birjemin/wxgamevp) [![Go Report Card](https://goreportcard.com/badge/github.com/birjemin/wxgamevp)](https://goreportcard.com/report/github.com/birjemin/wxgamevp) [![codecov](https://codecov.io/gh/Birjemin/wxgamevp/branch/master/graph/badge.svg)](https://codecov.io/gh/Birjemin/wxgamevp)
 
