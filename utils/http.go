@@ -22,7 +22,9 @@ func (c *HTTPClient) HTTPGet(url string, params map[string]string) error {
 		return errors.New("sending http get request error")
 	}
 	req.URL.RawQuery = HTTPQueryBuild(params)
-	c.Response, err = c.Client.Do(req)
+	if c.Response, err = c.Client.Do(req); err != nil {
+		return errors.New("http get response error")
+	}
 	return nil
 }
 
