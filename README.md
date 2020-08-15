@@ -27,6 +27,28 @@ httpClient := &utils.HTTPClient{
         Timeout: 5 * time.Second,
     },
 }
+pay := Pay{
+		OpenID:       "odkx20ENSNa2w5y3g_qOkOvBNM1g",
+		AppID:        "wx1234567",
+		OfferID:      "12345678",
+		Ts:           1507530737,
+		ZoneID:       "1",
+		Amt:          123,
+		BillNo:       "BillNo_123",
+		Pf:           "android",
+		AccessToken:  "ACCESSTOKEN",
+		Secret:       "zNLgAGgqsEWJOg1nFVaO5r7fAlIQxr1u",
+		SessionToken: "V7Q38/i2KXaqrQyl2Yx9Hg==",
+		HTTPRequest:  httpClient,
+	}
+
+	if ret, err := pay.Pay(); err != nil {
+		t.Error(err)
+	} else {
+		if ret.ErrCode != 0 {
+			t.Error(errors.New("msg: " + ret.ErrMsg))
+		}
+	}
 ```
 
 ### 备注
