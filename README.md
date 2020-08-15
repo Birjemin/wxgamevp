@@ -51,7 +51,7 @@ pay := Pay{
 	}
 ```
 
-### 备注
+### 测试
 - 测试
     ```
     go test
@@ -66,3 +66,6 @@ pay := Pay{
     go test -coverprofile=coverage.out 
     go tool cover -html=coverage.out
     ```
+
+### 备注
+无
