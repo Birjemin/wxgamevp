@@ -12,7 +12,6 @@ type Order struct {
 	OrderNo     string
 	OutTradeNo  string
 	AccessToken string
-	Secret      string
 	HTTPRequest *utils.HTTPClient
 	Debug       bool
 }

@@ -16,6 +16,7 @@ go get github.com/birjemin/wxgamevp
 - [getBalance](https://developers.weixin.qq.com/minigame/dev/api-backend/midas-payment/midas.getBalance.html) ✅
 - [pay](https://developers.weixin.qq.com/minigame/dev/api-backend/midas-payment/midas.pay.html) ✅
 - [present](https://developers.weixin.qq.com/minigame/dev/api-backend/midas-payment/midas.present.html) ✅
+- [getPayForOrder](https://developers.weixin.qq.com/minigame/dev/api-backend/midas-payment/business.getPayForOrder.html) ⚠️
 
 ### 使用方式
 

@@ -56,7 +56,6 @@ func TestGetOrder(t *testing.T) {
 		OrderNo:     "1001",
 		OutTradeNo:  "1000",
 		AccessToken: "ACCESSTOKEN",
-		Secret:      "zNLgAGgqsEWJOg1nFVaO5r7fAlIQxr1u",
 		HTTPRequest: httpClient,
 	}
 
@@ -67,5 +66,4 @@ func TestGetOrder(t *testing.T) {
 			t.Error(errors.New("msg: " + ret.ErrMsg))
 		}
 	}
-
 }
