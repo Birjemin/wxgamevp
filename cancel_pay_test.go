@@ -24,13 +24,10 @@ func TestCancelPayQueryParams(t *testing.T) {
 		BillNo:       "BillNo_123",
 		AccessToken:  "ACCESSTOKEN",
 		Secret:       "zNLgAGgqsEWJOg1nFVaO5r7fAlIQxr1u",
-		SessionToken: "V7Q38/i2KXaqrQyl2Yx9Hg==",
 	}
 
 	query := pay.getQueryParams()
 	ast.Equal("cff702559f26433de1df7e20921d5798bf4dc1c7636472a0bec82369a8bb6ba8", query["sig"])
-	ast.Equal("35b37a9192e7bbb595627b371ac8dc6ccf879f3d8b9486927708a1de13232219", query["mp_sig"])
-	ast.Equal(9, len(query))
 }
 
 // TestCancelPay test cancel_pay
@@ -85,7 +82,6 @@ func TestCancelPay(t *testing.T) {
 		Pf:           "android",
 		AccessToken:  "ACCESSTOKEN",
 		Secret:       "zNLgAGgqsEWJOg1nFVaO5r7fAlIQxr1u",
-		SessionToken: "V7Q38/i2KXaqrQyl2Yx9Hg==",
 		HTTPRequest:  httpClient,
 	}
 

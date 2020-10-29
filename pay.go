@@ -22,7 +22,6 @@ type Pay struct {
 	AppRemark    string
 	AccessToken  string
 	Secret       string
-	SessionToken string
 	HTTPRequest  *utils.HTTPClient
 	Debug        bool
 }
@@ -68,7 +67,7 @@ func (p *Pay) doPay(domain string) (*RespPay, error) {
 
 // getQueryParams
 func (p *Pay) getQueryParams() map[string]string {
-	params := make(map[string]string, 9)
+	params := make(map[string]string, 12)
 	params["openid"] = p.OpenID
 	params["appid"] = p.AppID
 	params["offer_id"] = p.OfferID
@@ -87,9 +86,6 @@ func (p *Pay) getQueryParams() map[string]string {
 		params["app_remark"] = p.AppRemark
 	}
 	params["sig"] = GenerateSign(p.getPayURI(), "POST", "secret", p.Secret, params)
-	params["access_token"] = p.AccessToken
-	params["mp_sig"] = GenerateSign(p.getPayURI(), "POST", "session_key", p.SessionToken, params)
-	delete(params, "access_token")
 	return params
 }
 

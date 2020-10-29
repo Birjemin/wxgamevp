@@ -25,13 +25,10 @@ func TestGetPayQueryParams(t *testing.T) {
 		BillNo:       "BillNo_123",
 		AccessToken:  "ACCESSTOKEN",
 		Secret:       "zNLgAGgqsEWJOg1nFVaO5r7fAlIQxr1u",
-		SessionToken: "V7Q38/i2KXaqrQyl2Yx9Hg==",
 	}
 
 	query := pay.getQueryParams()
 	ast.Equal("ada5ef41b2f185b9d6ba041ed0f4ba562ed5aeb6acce17be58865fa88c55aaab", query["sig"])
-	ast.Equal("101c9de900169d556be97ceafce55a18bf1385bc39e0ddb4e8ca7c1d670c76da", query["mp_sig"])
-	ast.Equal(10, len(query))
 }
 
 func TestPay(t *testing.T) {
@@ -86,7 +83,6 @@ func TestPay(t *testing.T) {
 		Pf:           "android",
 		AccessToken:  "ACCESSTOKEN",
 		Secret:       "zNLgAGgqsEWJOg1nFVaO5r7fAlIQxr1u",
-		SessionToken: "V7Q38/i2KXaqrQyl2Yx9Hg==",
 		HTTPRequest:  httpClient,
 	}
 

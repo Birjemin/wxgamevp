@@ -20,7 +20,6 @@ type Present struct {
 	PresentCounts int
 	AccessToken   string
 	Secret        string
-	SessionToken  string
 	HTTPRequest   *utils.HTTPClient
 	Debug         bool
 }
@@ -65,7 +64,7 @@ func (p *Present) doPresent(domain string) (*RespPay, error) {
 
 // getQueryParams
 func (p *Present) getQueryParams() map[string]string {
-	params := make(map[string]string, 9)
+	params := make(map[string]string, 10)
 	params["openid"] = p.OpenID
 	params["appid"] = p.AppID
 	params["offer_id"] = p.OfferID
@@ -78,9 +77,6 @@ func (p *Present) getQueryParams() map[string]string {
 	}
 	params["present_counts"] = cast.ToString(p.PresentCounts)
 	params["sig"] = GenerateSign(p.getPresentURI(), "POST", "secret", p.Secret, params)
-	params["access_token"] = p.AccessToken
-	params["mp_sig"] = GenerateSign(p.getPresentURI(), "POST", "session_key", p.SessionToken, params)
-	delete(params, "access_token")
 	return params
 }
 

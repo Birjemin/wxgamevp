@@ -20,7 +20,6 @@ type CancelPay struct {
 	PayItem      string
 	AccessToken  string
 	Secret       string
-	SessionToken string
 	HTTPRequest  *utils.HTTPClient
 	Debug        bool
 }
@@ -79,9 +78,6 @@ func (p *CancelPay) getQueryParams() map[string]string {
 		params["pay_item"] = p.PayItem
 	}
 	params["sig"] = GenerateSign(p.getCancelPayURI(), "POST", "secret", p.Secret, params)
-	params["access_token"] = p.AccessToken
-	params["mp_sig"] = GenerateSign(p.getCancelPayURI(), "POST", "session_key", p.SessionToken, params)
-	delete(params, "access_token")
 	return params
 }
 

@@ -23,13 +23,10 @@ func TestGetQueryParams(t *testing.T) {
 		Pf:           "android",
 		AccessToken:  "ACCESSTOKEN",
 		Secret:       "zNLgAGgqsEWJOg1nFVaO5r7fAlIQxr1u",
-		SessionToken: "V7Q38/i2KXaqrQyl2Yx9Hg==",
 	}
 
 	query := balance.getQueryParams()
 	ast.Equal("1ad64e8dcb2ec1dc486b7fdf01f4a15159fc623dc3422470e51cf6870734726b", query["sig"])
-	ast.Equal("ff4c5bb39dea1002a8f03be0438724e1a8bcea5ebce8f221f9b9fea3bcf3bf76", query["mp_sig"])
-	ast.Equal(8, len(query))
 }
 
 func TestGetBalance(t *testing.T) {
@@ -82,7 +79,6 @@ func TestGetBalance(t *testing.T) {
 		Pf:           "android",
 		AccessToken:  "ACCESSTOKEN",
 		Secret:       "zNLgAGgqsEWJOg1nFVaO5r7fAlIQxr1u",
-		SessionToken: "V7Q38/i2KXaqrQyl2Yx9Hg==",
 		HTTPRequest:  httpClient,
 	}
 

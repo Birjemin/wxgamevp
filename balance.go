@@ -18,7 +18,6 @@ type Balance struct {
 	UserIP       string
 	AccessToken  string
 	Secret       string
-	SessionToken string
 	HTTPRequest  *utils.HTTPClient
 	Debug        bool
 }
@@ -69,7 +68,7 @@ func (b *Balance) doGetBalance(domain string) (*RespBalance, error) {
 
 // getQueryParams
 func (b *Balance) getQueryParams() map[string]string {
-	params := make(map[string]string, 10)
+	params := make(map[string]string, 8)
 	params["openid"] = b.OpenID
 	params["appid"] = b.AppID
 	params["offer_id"] = b.OfferID
@@ -80,9 +79,6 @@ func (b *Balance) getQueryParams() map[string]string {
 		params["user_ip"] = b.UserIP
 	}
 	params["sig"] = GenerateSign(b.getBalanceURI(), "POST", "secret", b.Secret, params)
-	params["access_token"] = b.AccessToken
-	params["mp_sig"] = GenerateSign(b.getBalanceURI(), "POST", "session_key", b.SessionToken, params)
-	delete(params, "access_token")
 	return params
 }
 

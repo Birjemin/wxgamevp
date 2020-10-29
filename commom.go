@@ -18,6 +18,9 @@ const (
 
 	getPresentURI        = "/cgi-bin/midas/present"
 	getSandboxPresentURI = "/cgi-bin/midas/sandbox/present"
+
+	getOrderURI        = "/wxa/business/getpayfororder"
+	getSandboxOrderURI = ""
 )
 
 var jsonIter = jsoniter.ConfigCompatibleWithStandardLibrary
